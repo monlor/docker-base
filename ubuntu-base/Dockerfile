@@ -1,12 +1,15 @@
 FROM ubuntu:20.04
 
-LABEL MAINTAINER="me@monlor.com"
+# docker buildx build --platform=linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/byteplan/ubuntu-base:v1.0.0 .
+
+LABEL Author="gongqianjun"  
+LABEL EMAIL="gongqianjun@byteplan.com"
 
 ENV LANG='zh_CN.UTF-8' LANGUAGE='zh_CN:zh' LC_ALL='zh_CN.UTF-8'
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && apt-get update \
-    && apt-get install -y --no-install-recommends locales tzdata curl \
+    && apt-get install -y --no-install-recommends locales tzdata curl ca-certificates \
     && echo "zh_CN.UTF-8 UTF-8" >> /etc/locale.gen \
     && locale-gen zh_CN.UTF-8 \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
