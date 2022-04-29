@@ -77,7 +77,7 @@ jobs:
           host: ${{ secrets.BARK_HOST}} # not required
           key: ${{ secrets.BARK_KEY }}   # Your secret key
           title: Github Actions
-          body: 'alpine-base ran ${{ job.status }}！'
+          body: 'ubuntu-base ran ${{ job.status }}！'
           isArchive: 1
           url: 'github://github.com/${{ github.repository }}'
           group: Github
