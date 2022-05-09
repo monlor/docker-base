@@ -1,7 +1,5 @@
 FROM ubuntu:20.04
 
-# docker buildx build --platform=linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/byteplan/ubuntu-base:v1.0.0 .
-
 LABEL Author="gongqianjun"  
 LABEL EMAIL="gongqianjun@byteplan.com"
 
