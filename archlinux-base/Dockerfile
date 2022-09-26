@@ -1,4 +1,4 @@
-FROM archlinux:base-20220807.0.72894
+FROM archlinux:latest
 
 LABEL MAINTAINER="me@monlor.com"
 
@@ -8,7 +8,7 @@ ENV TZ=Asia/Shanghai
 ENV DUMB_INIT_VERSION="1.2.5"
 
 # 加入中国镜像源和社区仓库
-RUN curl -sL 'https://archlinux.org/mirrorlist/?country=CN&protocol=https&ip_version=4' \
+RUN curl -sL 'https://archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4' \
         | sed 's/^#Server/Server/' > /etc/pacman.d/mirrorlist \
  && curl -sL 'https://raw.githubusercontent.com/archlinuxcn/mirrorlist-repo/master/archlinuxcn-mirrorlist' \
         | sed 's/^# Server/Server/' > /etc/pacman.d/archlinuxcn-mirrorlist \
